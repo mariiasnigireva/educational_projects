@@ -41,4 +41,9 @@ The following data on listening to tracks in the Yandex.Music service was availa
     - How do different purposes of a loan affect its return on time?
 - Summarizing
 
+## Libraries used in the project
+
+- *pandas*
+- *pymystem3 (Mystem)*
+
 *All comments in the project are in Russian.
