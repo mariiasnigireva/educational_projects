@@ -1,23 +1,10 @@
-## praktikum_1_music
+This repository contains training projects completed during the training of the Data Analyst profession in Yandex.Practice.
 
-### Study
-Music of Big Cities
+List of projects
 
-### Study tasks
-How is the music played on the way to work on Monday morning different from the one played on Wednesday or at the end of the working week for Moscow and St. Petersburg? 
-It is necessary to compare what and in what mode their inhabitants listen.
+| Name | Description | Libraries used |
+| :--- | :--- | :--: |
+|[Music of big cities](https://github.com/mariiasnigireva/educational_projects/tree/main/praktikum_1_music) | Comparison of preferences of Yandex.Music users from Moscow and St. Petersburg depending on time (morning and evening) and day of the week (Monday, Wednesday, Friday) | *pandas* |
 
-### Data source
-Yandex.Music for Moscow and St. Petersburg.
-
-### Study plan
-Receiving data
-Data preprocessing
-Data analysis
-Summarizing
 
 *All comments in the project are in Russian.
-
-| col1 | col2 | col3 |
-| ---- | ---- | ---- |
-| 111 | fgd | gfdgdf |
