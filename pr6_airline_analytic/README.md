@@ -1,27 +1,57 @@
 # Description of the project
 
 ## Study
-Adjustment of the advertising budget for an online computer games store.
+Identifying the preferences of users who buy tickets to certain destinations.
 
 ## Study tasks
-Our task is to identify the regularities that determine the success of the game. This will allow you to bet on a potentially popular product and plan an advertising campaign for 2017 for an online computer games store.
+Our task is to understand the preferences of users of the airline operating domestic passenger air travel.
+That meens to analyze the passenger demand for flights to cities where the largest festivals are held.
 
 ## Data source
-Historical data on game sales, user and expert ratings, genres and platforms (for example, Xbox or PlayStation) are available from open sources.
+Airline's archive data and open source data.
 
 ## Data
 The following data was available:
 
-- **Name** - the name of the game
-- **Platform** - platform's name
-- **Year_of_Release** - release year
-- **Genre** - game genre
-- **NA_sales** - North American sales (millions of dollars)
-- **EU_sales** - Sales in Europe (millions of dollars)
-- **JP_sales** - Sales in Japan (millions of dollars)
-- **Other_sales** - sales in other countries (millions of dollars)
-- **Critic_Score** - Critic score (maximum 100)
-- **User_Score** - user score (maximum 10)
+The airports table - information about airports:
+
+- **airport_code** - three-letter airport code
+- **airport_name** - airport name
+- **city** - city
+- **timezone** - time zone
+
+Aircrafts table - aircraft information:
+
+- **aircraft_code** - aircraft model code
+- **model** - aircraft model
+- **range** - number of aircraft
+
+Tickets table - information about tickets:
+
+- **ticket_no** - unique ticket number
+- **passenger_id** - personal identifier of the passenger
+- **passenger_name** - passenger's first and last name
+
+Flights table - flight information:
+
+- **flight_id** - unique flight identifier
+- **departure_airport** - departure airport
+- **departure_time** - date and time of departure
+- **arrival_airport** - arrival airport
+- **arrival_time** - date and time of arrival
+- **aircraft_code** - aircraft id
+
+Table ticket_flights - flight-to-ticket splice table:
+
+- **ticket_no** - ticket number
+-**flight_id** - flight identifier
+
+Festivals table - information about festivals:
+
+- **festival_id** - unique number of the festival
+- **festival_date** - the date of the festival
+- **festival_city** - the city of the festival
+- **festival_name** - the name of the festival
 
 ## Study plan
 
@@ -31,28 +61,17 @@ The following data was available:
     - replace data types with correct ones if it is necessary
     - remove duplicates if it is necessary
 - Data analysis:
-    - calculation of total sales in all regions
+    - choose the top 10 cities by the number of flights
     - determination of the current time period
-    - assessment of the typical lifespan of platforms
-    - selection of potentially profitable platforms
-    - study of the impact of reviews on sales within one popular platform
-    - highlighting genres with high and low sales
-- Modeling of a user portrait in each region:
-    - identification of the most popular platforms (top 5)
-    - identification of the most popular genres (top-5)
-    - determining the degree of influence of the ESRB rating on sales in a particular region
-- Hypothesis testing:
-    - the average user ratings for Xbox One and PC platforms are the same
-    - the average user ratings of Action and Sports genres are different
+    - plot aircraft models and the number of flights (Column Chart)
+    - plot city and the number of flights (Line Chart)
+    - plot a diagram the top 10 cities and the number of flights (Column Chart)
 - Summarizing
 
 ## Libraries used in the project
 
 - *pandas*
-- *numpy*
 - *seaborn*
 - *matplotlib.pyplot*
-- *scipy*
-- *scipy.stats*
 
 *All comments in the project are in Russian.
