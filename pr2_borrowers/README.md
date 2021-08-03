@@ -10,7 +10,7 @@ For the credit department of the bank, it was necessary to figure out whether th
 Input data from the bank - statistics on the solvency of clients.
 
 ## Data
-The following data on listening to tracks in the Yandex.Music service was available:
+The following data was available:
 
 - **children** - the number of children in the family
 - **days_employed** - total work experience in days

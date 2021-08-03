@@ -10,7 +10,7 @@ The task is to determine the market value of real estate objects based on the ba
 Archive of advertisements for the sale of apartments in St. Petersburg and neighboring settlements for several years from the Yandex.Real service.
 
 ## Data
-The following data on listening to tracks in the Yandex.Music service was available:
+The following data was available:
 
 - **airports_nearest** - distance to the nearest airport in meters (m)
 - **balcony** - number of balconies
