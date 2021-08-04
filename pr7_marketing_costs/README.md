@@ -43,17 +43,17 @@ Costs table (information about marketing costs):
     - replace data types with correct ones if it is necessary
     - remove duplicates if it is necessary
 - Data analysis to answer the following questions:
-    - **Product**
+    1. **Product**
      - How many people use it per day, week, month?
      - How many sessions per day?
      - How long is one session?
      - How often do people come back?
-    - **Sales**
+    2. **Sales**
      - When do people start buying?
      - How many times are purchased per period?
      - What is the average check?
      - How much money do they bring in? (LTV)
-    - **Marketing**
+    3. **Marketing**
      - How much money did you spend? Total / per source / by time
      - How much did it cost to attract one customer from each source?
      - How much has the cost paid off? (ROI)
