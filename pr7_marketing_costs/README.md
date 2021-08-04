@@ -1,57 +1,39 @@
 # Description of the project
 
 ## Study
-Identifying the preferences of users who buy tickets to certain destinations.
+Optimization of marketing costs Yandex.Achisha.
 
 ## Study tasks
-Our task is to understand the preferences of users of the airline operating domestic passenger air travel.
-That meens to analyze the passenger demand for flights to cities where the largest festivals are held.
+To optimize the marketing costs of the Yandex.Afisha service, it's necessary to study how customers use the product, when they start buying, how much money each customer brings when the customer pays off.
 
 ## Data source
-Airline's archive data and open source data.
+Yandex.Afisha data from June 2017 to the end of May 2018:
+- server log with data on visits to the Yandex.Afisha website
+- unloading of all orders for this period
+- statistics of advertising costs
 
 ## Data
 The following data was available:
 
-The airports table - information about airports:
+The visits table (server log with information about site visits):
 
-- **airport_code** - three-letter airport code
-- **airport_name** - airport name
-- **city** - city
-- **timezone** - time zone
+- **Uid** - unique identifier of the user
+- **Device** - user device category
+- **Start Ts** - date and time of the session start
+- **End Ts** - date and time of the end of the session
+- **Source Id** - the identifier of the advertising source from which the user came
 
-Aircrafts table - aircraft information:
+Orders table (order information):
 
-- **aircraft_code** - aircraft model code
-- **model** - aircraft model
-- **range** - number of aircraft
+- **Uid** - unique id of the user who made the order
+- **Buy Ts** - date and time of order
+- **Revenue** - Yandex.Afisha's revenue from this order
 
-Tickets table - information about tickets:
+Costs table (information about marketing costs):
 
-- **ticket_no** - unique ticket number
-- **passenger_id** - personal identifier of the passenger
-- **passenger_name** - passenger's first and last name
-
-Flights table - flight information:
-
-- **flight_id** - unique flight identifier
-- **departure_airport** - departure airport
-- **departure_time** - date and time of departure
-- **arrival_airport** - arrival airport
-- **arrival_time** - date and time of arrival
-- **aircraft_code** - aircraft id
-
-Table ticket_flights - flight-to-ticket splice table:
-
-- **ticket_no** - ticket number
--**flight_id** - flight identifier
-
-Festivals table - information about festivals:
-
-- **festival_id** - unique number of the festival
-- **festival_date** - the date of the festival
-- **festival_city** - the city of the festival
-- **festival_name** - the name of the festival
+- **source_id** - ad source identifier
+- **dt** - date
+- **costs** - the cost of this ad source on that day
 
 ## Study plan
 
@@ -60,17 +42,27 @@ Festivals table - information about festivals:
     - define and fill in missing values
     - replace data types with correct ones if it is necessary
     - remove duplicates if it is necessary
-- Data analysis:
-    - choose the top 10 cities by the number of flights
-    - determination of the current time period
-    - plot aircraft models and the number of flights (Column Chart)
-    - plot city and the number of flights (Line Chart)
-    - plot a diagram the top 10 cities and the number of flights (Column Chart)
+- Data analysis to answer the following questions:
+    - **Product**
+     - How many people use it per day, week, month?
+     - How many sessions per day?
+     - How long is one session?
+     - How often do people come back?
+    - **Sales**
+     - When do people start buying?
+     - How many times are purchased per period?
+     - What is the average check?
+     - How much money do they bring in? (LTV)
+    - **Marketing**
+     - How much money did you spend? Total / per source / by time
+     - How much did it cost to attract one customer from each source?
+     - How much has the cost paid off? (ROI)
 - Summarizing
 
 ## Libraries used in the project
 
 - *pandas*
+- *numpy*
 - *seaborn*
 - *matplotlib.pyplot*
 
