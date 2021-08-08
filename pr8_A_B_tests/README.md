@@ -1,7 +1,7 @@
 # Description of the project
 
 ## Study
-Optimization of marketing costs Yandex.Achisha.
+Optimization of marketing costs Yandex.Afisha.
 
 ## Study tasks
 To optimize the marketing costs of the Yandex.Afisha service, it's necessary to study how customers use the product, when they start buying, how much money each customer brings when the customer pays off.
