@@ -37,6 +37,7 @@ Rest_data table:
     - Find the number of streets with one catering facility. Use external information to answer the question - in which districts of Moscow these streets are located.
     - Look at the distribution of the number of seats for streets with a large number of catering facilities. Identify patterns.
 - Summarizing
+- Presentation
 
 ## Libraries used in the project
 
