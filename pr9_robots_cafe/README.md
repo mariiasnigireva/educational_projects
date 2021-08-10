@@ -1,39 +1,24 @@
 # Description of the project
 
 ## Study
-Optimization of marketing costs Yandex.Afisha.
+Moscow public catering market Analysis.
 
 ## Study tasks
-To optimize the marketing costs of the Yandex.Afisha service, it's necessary to study how customers use the product, when they start buying, how much money each customer brings when the customer pays off.
+The objective of the study is to prepare a report for investors on the current state of the Moscow public catering market. You need to check if there is a niche for a small cafe in which guests should be served by robots. As a result of the study, it is necessary to make recommendations about the type of institution, the number of seats, as well as the location, comment on the possibility of developing the network.
 
 ## Data source
-Yandex.Afisha data from June 2017 to the end of May 2018:
-- server log with data on visits to the Yandex.Afisha website
-- unloading of all orders for this period
-- statistics of advertising costs
+Open data on catering establishments in Moscow.
 
 ## Data
 The following data was available:
 
-The visits table (server log with information about site visits):
+Rest_data table:
 
-- **Uid** - unique identifier of the user
-- **Device** - user device category
-- **Start Ts** - date and time of the session start
-- **End Ts** - date and time of the end of the session
-- **Source Id** - the identifier of the advertising source from which the user came
-
-Orders table (order information):
-
-- **Uid** - unique id of the user who made the order
-- **Buy Ts** - date and time of order
-- **Revenue** - Yandex.Afisha's revenue from this order
-
-Costs table (information about marketing costs):
-
-- **source_id** - ad source identifier
-- **dt** - date
-- **costs** - the cost of this ad source on that day
+- **object_name** - the name of the catering facility;
+- **chain** - chain restaurant;
+- **object_type** - type of catering object;
+- **address** - address;
+- **number** - the number of seats.
 
 ## Study plan
 
@@ -43,20 +28,14 @@ Costs table (information about marketing costs):
     - replace data types with correct ones if it is necessary
     - remove duplicates if it is necessary
 - Data analysis to answer the following questions:
-    1. **Product**
-     - How many people use it per day, week, month?
-     - How many sessions per day?
-     - How long is one session?
-     - How often do people come back?
-    2. **Sales**
-     - When do people start buying?
-     - How many times are purchased per period?
-     - What is the average check?
-     - How much money do they bring in? (LTV)
-    3. **Marketing**
-     - How much money did you spend? Total / per source / by time
-     - How much did it cost to attract one customer from each source?
-     - How much has the cost paid off? (ROI)
+    - Investigate and plot the ratio of types of public catering facilities in terms of quantity.
+    - Investigate and plot the ratio of network and non-network establishments in terms of number.
+    - Investigate what type of catering facility is characterized by network distribution.
+    - Track what is typical for chain establishments: many establishments with a small number of seats in each or few establishments with a large number of seats.
+    - For each type of catering facility, describe the average number of seats. Find out which species has the most seats on average and plot it.
+    - Plot the top 10 streets by the number of catering facilities. Use external information to answer the question - in which districts of Moscow these streets are located.
+    - Find the number of streets with one catering facility. Use external information to answer the question - in which districts of Moscow these streets are located.
+    - Look at the distribution of the number of seats for streets with a large number of catering facilities. Identify patterns.
 - Summarizing
 
 ## Libraries used in the project
@@ -65,5 +44,9 @@ Costs table (information about marketing costs):
 - *numpy*
 - *seaborn*
 - *matplotlib.pyplot*
+- *plotly.express*
+- *plotly.graph_objects*
+- *datetime*
+- *stats*
 
 *All comments in the project are in Russian.
