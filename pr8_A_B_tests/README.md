@@ -36,11 +36,11 @@ Visitors table (information about the costs of visitors, obtained as a result of
 
 ## Study plan
 
-- 1. Part - prioritization of hypotheses:
+1. Part - prioritization of hypotheses:
     - Apply ICE framework for hypothesis prioritization. Sort them in descending order of priority.
     - Apply a RICE framework to prioritize hypotheses. Sort them in descending order of priority.
     - Draw conclusions about how the prioritization of hypotheses has changed when using RICE instead of ICE.
-- 2. Part - analysis of the results of the A/B test:
+2. Part - analysis of the results of the A/B test:
     - Exploring general information about the data
     - Plot the cumulative revenue by group. Draw conclusions and assumptions.
     - Plot the cumulative average bill by group. Draw conclusions and assumptions.
@@ -55,7 +55,7 @@ Visitors table (information about the costs of visitors, obtained as a result of
     - Calculate the statistical significance of the differences in the average order receipt between groups according to the "raw" data. Draw conclusions and assumptions.
     - Calculate the statistical significance of differences in conversion between groups based on "cleaned" data. Draw conclusions and assumptions.
     - Calculate the statistical significance of the differences in the average order receipt between groups according to the "cleaned" data. Draw conclusions and assumptions.
-- 3. Summarizing
+3. Summarizing
 
 ## Libraries used in the project
 
