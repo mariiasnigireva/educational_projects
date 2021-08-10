@@ -1,63 +1,61 @@
 # Description of the project
 
 ## Study
-Optimization of marketing costs Yandex.Afisha.
+A/B test analysis for a large online store.
 
 ## Study tasks
-To optimize the marketing costs of the Yandex.Afisha service, it's necessary to study how customers use the product, when they start buying, how much money each customer brings when the customer pays off.
+The task is to choose the most promising hypotheses from a number of hypotheses, i.e. prioritize hypotheses. After conducting and receiving the results of the A/B test, draw conclusions about the success of the A/B test and make a decision on the extension, or the successful/unsuccessful completion of the test.
 
 ## Data source
-Yandex.Afisha data from June 2017 to the end of May 2018:
-- server log with data on visits to the Yandex.Afisha website
-- unloading of all orders for this period
-- statistics of advertising costs
+Archived data of the marketing department of the client.
 
 ## Data
 The following data was available:
 
-The visits table (server log with information about site visits):
+Hypothesis table (9 hypotheses for increasing online store revenue):
 
-- **Uid** - unique identifier of the user
-- **Device** - user device category
-- **Start Ts** - date and time of the session start
-- **End Ts** - date and time of the end of the session
-- **Source Id** - the identifier of the advertising source from which the user came
+- **Hypothesis** - a short description of the hypothesis;
+- **Reach** - user reach on a 10-point scale;
+- **Impact** - impact on users on a 10-point scale;
+- **Confidence** - confidence in the hypothesis on a 10-point scale;
+- **Efforts** - resource costs for hypothesis testing on a 10-point scale. The higher the Efforts value, the more expensive it is to test the hypothesis.
 
-Orders table (order information):
+Orders table (information about orders, obtained as a result of A / B-test):
 
-- **Uid** - unique id of the user who made the order
-- **Buy Ts** - date and time of order
-- **Revenue** - Yandex.Afisha's revenue from this order
+- **transactionId** - order identifier;
+- **visitorId** - identifier of the user who made the order;
+- **date** - the date when the order was made;
+- **revenue** - order revenue;
+- **group** - the group of the A / B test that the order fell into.
 
-Costs table (information about marketing costs):
+Visitors table (information about the costs of visitors, obtained as a result of an A / B test):
 
-- **source_id** - ad source identifier
-- **dt** - date
-- **costs** - the cost of this ad source on that day
+- **date** - date;
+- **group** - A / B test group;
+- **visitors** - the number of users on the specified date in the specified A / B test group
 
 ## Study plan
 
-- Exploring general information about the data
-- Data processing:
-    - define and fill in missing values
-    - replace data types with correct ones if it is necessary
-    - remove duplicates if it is necessary
-- Data analysis to answer the following questions:
-    1. **Product**
-     - How many people use it per day, week, month?
-     - How many sessions per day?
-     - How long is one session?
-     - How often do people come back?
-    2. **Sales**
-     - When do people start buying?
-     - How many times are purchased per period?
-     - What is the average check?
-     - How much money do they bring in? (LTV)
-    3. **Marketing**
-     - How much money did you spend? Total / per source / by time
-     - How much did it cost to attract one customer from each source?
-     - How much has the cost paid off? (ROI)
-- Summarizing
+- 1. Part - prioritization of hypotheses:
+    - Apply ICE framework for hypothesis prioritization. Sort them in descending order of priority.
+    - Apply a RICE framework to prioritize hypotheses. Sort them in descending order of priority.
+    - Draw conclusions about how the prioritization of hypotheses has changed when using RICE instead of ICE.
+- 2. Part - analysis of the results of the A/B test:
+    - Exploring general information about the data
+    - Plot the cumulative revenue by group. Draw conclusions and assumptions.
+    - Plot the cumulative average bill by group. Draw conclusions and assumptions.
+    - Plot the relative change in the cumulative average check of group B to group A. Make conclusions and assumptions.
+    - Plot the cumulative conversion by group. Draw conclusions and assumptions.
+    - Plot the relative change in the cumulative conversion of group B to group A. Draw conclusions and assumptions.
+    - Scatter plot of the number of orders by users. Draw conclusions and assumptions.
+    - Calculate the 95th and 99th percentiles of the number of orders per user. Select a border to identify abnormal users.
+    - Build a scatter plot of order values. Draw conclusions and assumptions.
+    - Calculate the 95th and 99th percentiles of the order value. Select a border to identify abnormal orders.
+    - Calculate the statistical significance of differences in conversion between groups based on raw data. Draw conclusions and assumptions.
+    - Calculate the statistical significance of the differences in the average order receipt between groups according to the "raw" data. Draw conclusions and assumptions.
+    - Calculate the statistical significance of differences in conversion between groups based on "cleaned" data. Draw conclusions and assumptions.
+    - Calculate the statistical significance of the differences in the average order receipt between groups according to the "cleaned" data. Draw conclusions and assumptions.
+- 3. Summarizing
 
 ## Libraries used in the project
 
@@ -65,5 +63,7 @@ Costs table (information about marketing costs):
 - *numpy*
 - *seaborn*
 - *matplotlib.pyplot*
+- *datetime*
+- *scipy.stats*
 
 *All comments in the project are in Russian.
