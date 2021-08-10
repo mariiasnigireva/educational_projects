@@ -1,43 +1,31 @@
 # Description of the project
 
 ## Study
-Moscow public catering market Analysis.
+Analysis of the behavior of users of the mobile application of a grocery store.
 
 ## Study tasks
-The objective of the study is to prepare a report for investors on the current state of the Moscow public catering market. You need to check if there is a niche for a small cafe in which guests should be served by robots. As a result of the study, it is necessary to make recommendations about the type of institution, the number of seats, as well as the location, comment on the possibility of developing the network.
+The purpose of the study is to understand how mobile application users behave. It is necessary to study the sales funnel, find out how users arrive at a purchase. How many users reach the purchase, and how many are "stuck" at the previous steps and on which ones. Next, you need to examine the results of the A/A/B experiment before and after changing the font in the application and find out which font is better. First, it is necessary to compare the control groups.
 
 ## Data source
-Open data on catering establishments in Moscow.
+User orders history data.
 
 ## Data
 The following data was available:
 
-Rest_data table:
+Logs_exp table: Each log entry is a user action or event.
 
-- **object_name** - the name of the catering facility;
-- **chain** - chain restaurant;
-- **object_type** - type of catering object;
-- **address** - address;
-- **number** - the number of seats.
+- **EventName** - the name of the event;
+- **DeviceIDHash** - unique user identifier;
+- **EventTimestamp** - event time;
+- **ExpId** is the experiment number: 246 and 247 are control groups, and 248 is experimental.
 
 ## Study plan
 
-- Exploring general information about the data
-- Data processing:
-    - define and fill in missing values
-    - replace data types with correct ones if it is necessary
-    - remove duplicates if it is necessary
-- Data analysis to answer the following questions:
-    - Investigate and plot the ratio of types of public catering facilities in terms of quantity.
-    - Investigate and plot the ratio of network and non-network establishments in terms of number.
-    - Investigate what type of catering facility is characterized by network distribution.
-    - Track what is typical for chain establishments: many establishments with a small number of seats in each or few establishments with a large number of seats.
-    - For each type of catering facility, describe the average number of seats. Find out which species has the most seats on average and plot it.
-    - Plot the top 10 streets by the number of catering facilities. Use external information to answer the question - in which districts of Moscow these streets are located.
-    - Find the number of streets with one catering facility. Use external information to answer the question - in which districts of Moscow these streets are located.
-    - Look at the distribution of the number of seats for streets with a large number of catering facilities. Identify patterns.
-- Summarizing
-- Presentation
+1. Step - Learning General Information
+2. Step - data preparation
+3. Step - study and validate data
+4. Step - Exploring the Funnel of Events
+5. Step - study the results of the experiment
 
 ## Libraries used in the project
 
@@ -48,6 +36,8 @@ Rest_data table:
 - *plotly.express*
 - *plotly.graph_objects*
 - *datetime*
-- *stats*
+- *scipy.stats*
+- *math*
+- *scipy*
 
 *All comments in the project are in Russian.
